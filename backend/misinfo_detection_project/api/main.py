@@ -42,7 +42,7 @@ try:
     from .search_api_utils import perform_search # Required for web search fallback
     from .kg_utils import load_graph, save_graph, load_spacy_model, extract_entities, add_claim_to_graph, query_kg_for_entities, graph as kg_global_graph # Import global graph for status check
 except ImportError as e:
-     print(f"ERROR: Failed to import necessary modules: {e}")
+     print(f"ERROR: Failed to import necessary modules for this project: {e}")
      print("Ensure all util files exist and Python can find the 'api' package.")
      exit(1)
 

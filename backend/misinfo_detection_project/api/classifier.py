@@ -53,7 +53,7 @@ def load_classifier() -> bool:
         return True
     # Check if transformers library was imported successfully
     if pipeline is None:
-         logger.error("Transformers library failed to import. Cannot load classifier.")
+         logger.error("Transformer library failed to import. Cannot load classifier.")
          return False
 
     logger.info(f"Attempting to load classifier model '{MODEL_NAME}' from Hugging Face Hub...")
@@ -62,7 +62,7 @@ def load_classifier() -> bool:
         if CACHE_DIR and not os.path.exists(CACHE_DIR):
              try:
                   os.makedirs(CACHE_DIR)
-                  logger.info(f"Created cache directory: {CACHE_DIR}")
+                  logger.info(f"Created cache directory for this model: {CACHE_DIR}")
              except OSError as e:
                   logger.warning(f"Could not create cache directory {CACHE_DIR}: {e}. Using default Hugging Face cache.")
                   # If dir creation fails, pipeline will use default HF cache
