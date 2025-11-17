@@ -81,7 +81,7 @@ async def get_api_key(key: str = Security(api_key_header)):
          logger.error("API Key security enabled, but INTERNAL_API_KEY not set. Denying request.")
          raise HTTPException(status_code=500, detail={"error": "Configuration Error", "message": "API Key authentication is misconfigured on the server."})
     if key == INTERNAL_API_KEY:
-        logger.debug("API Key validated successfully.")
+        logger.debug("API Key validated successfully for this project.")
         return key
     else:
         logger.warning("Request rejected: Invalid API Key provided.")
